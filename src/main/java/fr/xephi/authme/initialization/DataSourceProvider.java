@@ -7,6 +7,7 @@ import fr.xephi.authme.datasource.DataSource;
 import fr.xephi.authme.datasource.DataSourceType;
 import fr.xephi.authme.datasource.FlatFile;
 import fr.xephi.authme.datasource.MySQL;
+import fr.xephi.authme.datasource.ReadOnlyMySQL;
 import fr.xephi.authme.datasource.SQLite;
 import fr.xephi.authme.datasource.converter.ForceFlatToSqlite;
 import fr.xephi.authme.datasource.mysqlextensions.MySqlExtensionsFactory;
@@ -71,6 +72,9 @@ public class DataSourceProvider implements Provider<DataSource> {
                 break;
             case MYSQL:
                 dataSource = new MySQL(settings, mySqlExtensionsFactory);
+                break;
+            case MYSQL_READONLY:
+                dataSource = new ReadOnlyMySQL(settings, mySqlExtensionsFactory);
                 break;
             case SQLITE:
                 dataSource = new SQLite(settings);

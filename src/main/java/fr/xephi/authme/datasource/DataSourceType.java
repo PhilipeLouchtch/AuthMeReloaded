@@ -6,6 +6,7 @@ package fr.xephi.authme.datasource;
 public enum DataSourceType {
 
     MYSQL,
+    MYSQL_READONLY,
 
     SQLITE,
 

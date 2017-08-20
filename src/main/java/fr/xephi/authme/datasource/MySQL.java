@@ -160,7 +160,7 @@ public class MySQL implements DataSource {
     /**
      * Creates the table or any of its required columns if they don't exist.
      */
-    private void checkTablesAndColumns() throws SQLException {
+    protected void checkTablesAndColumns() throws SQLException {
         try (Connection con = getConnection(); Statement st = con.createStatement()) {
             // Create table with ID column if it doesn't exist
             String sql = "CREATE TABLE IF NOT EXISTS " + tableName + " ("

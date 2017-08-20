@@ -89,6 +89,7 @@ public class BackupService {
             case FILE:
                 return performFileBackup("auths.db");
             case MYSQL:
+            case MYSQL_READONLY:
                 return performMySqlBackup();
             case SQLITE:
                 String dbName = settings.getProperty(DatabaseSettings.MYSQL_DATABASE);
